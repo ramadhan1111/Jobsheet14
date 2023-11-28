@@ -1,16 +1,20 @@
+import java.util.Scanner;
+
 public class DeretDescendingRekursif25 {
 
-    public static void tampilDeretRekursif(int n) {
-        if (n == 0) {
-            return;
+    public static void tampilBilanganRekursif(int n) {
+        if (n > 0) {
+            System.out.println(n);
+            tampilBilanganRekursif(n - 1);
+        } else {
+            System.out.println(n);
         }
-
-        System.out.println(n);
-        tampilDeretRekursif(n - 1);
     }
 
     public static void main(String[] args) {
-        int n = Integer.parseInt(System.console().readLine("Masukkan n: "));
-        tampilDeretRekursif(n);
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Masukkan nilai n: ");
+        int n = sc.nextInt();
+        tampilBilanganRekursif(n);
     }
 }
