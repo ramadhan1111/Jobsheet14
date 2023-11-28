@@ -1,16 +1,26 @@
+import java.util.Scanner;
+
 public class PenjumlahanRekursif25 {
 
-    public static int jumlah(int n) {
-        if (n == 0) {
-            return 0;
+    public static int penjumlahan(int n) {
+        if (n == 1) {
+            return 1;
         } else {
-            return jumlah(n - 1) + n;
+            return n + penjumlahan(n - 1);
         }
     }
 
     public static void main(String[] args) {
-        int n = Integer.parseInt(System.console().readLine("Masukkan n: "));
-        int hasil = jumlah(n);
-        System.out.println("Hasil penjumlahan = " + hasil);
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Masukkan nilai n: ");
+        int n = sc.nextInt();
+
+        int total = penjumlahan(n);
+        System.out.println("Hasil penjumlahan bilangan dari 1 sampai " + n + " adalah " + total);
+
+        System.out.println("Proses penjumlahan:");
+        for (int i = 1; i <= n; i++) {
+            System.out.print(i + " ");
+        }
     }
 }
